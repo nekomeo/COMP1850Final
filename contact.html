@@ -4,34 +4,84 @@
         <title>Contact</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!-- <link rel="stylesheet" href="css/mystyle.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/mystyle.css"> 
 <!--        <script src="js/myscript.js"></script>-->
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
-            <a href="#" class="navbar-brand">My Website</a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">My Website</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto nav-pills nav-fill">
-                    <li class="navbar-item">
-                        <a href="index.html" class="nav-link">Homepage</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="navbar-item">
-<!--                        <a href="#" class="nav-link">Been To</a>-->
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Restaurants</a>
                         <div class="dropdown-menu">
-                            <a href="been.html" class="dropdown-item">Been To</a>
-                            <a href="#" class="dropdown-item">Want To</a>
-                    </div>
+                            <a class="dropdown-item" href="been.html">Been To</a>
+                            <a class="dropdown-item" href="#">Want To</a>
+                        </div>
                     </li>
-                    <li class="navbar-item">
-                        <a href="#" class="nav-link active">Contact</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
             </div>
         </nav>
+        <br>
+        <!-- Body's Content -->
+        <div class="container">
+            <p>If you have a suggestion on what to try, please drop me a comment below!</p>
+            <form>
+                <div class="form-group">
+                    <label for="inputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <!-- Radio Buttons -->
+                <label for="radioSelection">Select which type of restaurant your comment is for</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                    <label class="form-check-label" for="exampleRadios1">Been To</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">Want To</label>
+                </div>
+                <!-- Comment Box -->
+                <br>
+                <label for="inputComment">Comment</label>
+                <div class="form-group">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter comment"></textarea>
+                </div>
+                
+                <!-- Modal -->
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Submit</button>
+                <div id="myModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Thanks!</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <p>We've recieved your comment!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
         
         
         <!-- Optional JavaScript -->
