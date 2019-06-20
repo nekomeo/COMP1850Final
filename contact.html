@@ -7,6 +7,27 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="css/mystyle.css"> 
 <!--        <script src="js/myscript.js"></script>-->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+        
+        <!-- TODO: Add SDKs for Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase.js"></script>
+        
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCARNLv6s7Hd8M0q3XXMbnUyXQbtCOp0Pg",
+                authDomain: "comp1850-finalproject.firebaseapp.com",
+                databaseURL: "https://comp1850-finalproject.firebaseio.com",
+                projectId: "comp1850-finalproject",
+                storageBucket: "comp1850-finalproject.appspot.com",
+                messagingSenderId: "52812964021",
+                appId: "1:52812964021:web:d4d935cf6cefa6e4"
+            };
+            
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -17,10 +38,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto nav-pills nav-fill">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
-                    <li class="navbar-item">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Restaurants</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Restaurants</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="been.html">Been To</a>
                             <a class="dropdown-item" href="#">Want To</a>
@@ -28,9 +49,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
             </div>
