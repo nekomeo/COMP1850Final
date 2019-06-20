@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/mystyle.css"> 
+<!--        <link rel="stylesheet" href="css/mystyle.css">-->
 <!--        <script src="js/myscript.js"></script>-->
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
@@ -14,7 +14,7 @@
         <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase.js"></script>
         
         <script>
-            // Your web app's Firebase configuration
+            // Web app's Firebase configuration
             var firebaseConfig = {
                 apiKey: "AIzaSyCARNLv6s7Hd8M0q3XXMbnUyXQbtCOp0Pg",
                 authDomain: "comp1850-finalproject.firebaseapp.com",
@@ -55,33 +55,34 @@
         </nav>
         <br>
         <!-- Body's Content -->
-        <div class="container">
+        <div class="container" id="contactForm">
             <p>If you have a suggestion on what to try, please drop me a comment below!</p>
-            <form>
+            <form method="post" action="#">
                 <div class="form-group">
                     <label for="inputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" class="form-control" name="inputEmail" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <!-- Radio Buttons -->
                 <label for="radioSelection">Select which type of restaurant your comment is for</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    <label class="form-check-label" for="exampleRadios1">Been To</label>
+                    <input class="form-check-input" type="radio" name="restaurantBeen" id="restaurant" value="option1">
+                    <label class="form-check-label" for="restaurantBeen">Been To</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">Want To</label>
+                    <input class="form-check-input" type="radio" name="restaurantWant" id="restaurant" value="option2">
+                    <label class="form-check-label" for="restaurantWant">Want To</label>
                 </div>
                 <!-- Comment Box -->
                 <br>
                 <label for="inputComment">Comment</label>
                 <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter comment"></textarea>
+                    <textarea class="form-control" name="inputComment" id="inputComment" rows="3" placeholder="Enter comment"></textarea>
                 </div>
                 
                 <!-- Modal -->
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Submit</button>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="addData()">Submit</button>
+<!--
                 <div id="myModal" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -98,6 +99,7 @@
                         </div>
                     </div>
                 </div>
+-->
             </form>
         </div>
         
@@ -107,5 +109,46 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <script>
+//            // Get a reference to the database service
+//            var database = firebase.database();
+//            
+//            function writeUserData(userId, inputEmail, restaurant, inputComment) {
+//                firebase.database().ref('users/' + userId).set({
+//                    input_Email: inputEmail,
+//                    input_Restaurant: restaurant,
+//                    input_Comment : inputComment
+//                }, function(error) {
+//                    if (error) {
+//                        alert("Something went wrong, please try again later. Sorry for the inconvenience");
+//                    } else {
+//                        alert("Success!");
+//                    }
+//                });
+//            }
+            
+            function addData(){
+                var db = firebase.firestore();
+                alert("adding data");
+                var input_Email = document.getElementById("inputEmail").value;
+                var input_Restaurant = document.getElementById("restaurant").value;
+                var input_Comment = document.getElementById("inputComment").value;
+
+                db.collection("contactForm").add({
+                    inputEmail: input_Email,
+                    restaurantType: input_Restaurant,
+                    inputComment: input_Comment
+                })
+                    .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    alert("Added");
+                    //update the products view
+                })
+                    .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+            }
+        </script>
     </body>
 </html>
