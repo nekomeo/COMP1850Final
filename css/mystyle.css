@@ -7,7 +7,8 @@ table {
 }
 
 .jumbotron {
-    background: blue;
+    margin-left: 15pt;
+    margin-right: 15pt;
 }
 
 .jumbotron img {
@@ -21,4 +22,8 @@ table {
 
 .return {
     padding: 10px;
+}
+
+.radio {
+    margin-left: 20px;
 }
