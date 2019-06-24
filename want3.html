@@ -38,31 +38,58 @@
                 <h2 style="margin-top: -50px;">El Santo</h2>
                 <img src="images/w3.png" width="100%" height="30%">
             </div>
-            <p>Bacon ipsum dolor amet pastrami nostrud cow, beef ribs nisi sunt lorem duis biltong spare ribs rump ham. Do laborum velit jowl sausage. Voluptate venison kevin ut enim reprehenderit eiusmod, laborum landjaeger do filet mignon. Tongue eiusmod in minim. In lorem id voluptate boudin sirloin beef et spare ribs deserunt cupidatat picanha ipsum in. Exercitation aliquip ipsum, chicken in boudin drumstick cupidatat labore occaecat alcatra minim rump beef ribs. Consequat turducken sausage sint dolor porchetta beef turkey, pork loin in.</p>
-            <table class="table" style="width: 50%">
-                <tbody>
-                    <tr>
-                        <th scope="row">Category</th>
-                        <td>Mexican</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Price Range</th>
-                        <td>$$</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Wait Time</th>
-                        <td>5 mins</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Serve Time</th>
-                        <td>20 mins</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Personal Rating (Stars)</th>
-                        <td>****</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <!-- Accordian -->
+            <div id="accordion">
+                
+                <!-- 1st Accordian -->
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0"><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Summary</button></h5>
+                    </div>
+                    <!-- Content Inside 1st Accordian -->
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>Bacon ipsum dolor amet pastrami nostrud cow, beef ribs nisi sunt lorem duis biltong spare ribs rump ham. Do laborum velit jowl sausage. Voluptate venison kevin ut enim reprehenderit eiusmod, laborum landjaeger do filet mignon. Tongue eiusmod in minim. In lorem id voluptate boudin sirloin beef et spare ribs deserunt cupidatat picanha ipsum in. Exercitation aliquip ipsum, chicken in boudin drumstick cupidatat labore occaecat alcatra minim rump beef ribs. Consequat turducken sausage sint dolor porchetta beef turkey, pork loin in.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2nd Accordian -->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Rating</button></h5>
+                    </div>
+                    <!-- Content Inside 2nd Accordian -->
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <table class="table" style="width: 50%">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Category</th>
+                                    <td>Mexican</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Price Range</th>
+                                    <td>$$</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Wait Time</th>
+                                    <td>5 mins</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Serve Time</th>
+                                    <td>20 mins</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Personal Rating (Stars)</th>
+                                    <td>****</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br>
             
             <!-- Pagination -->
             <nav>
