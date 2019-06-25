@@ -22,3 +22,10 @@ table {
 .radio {
     margin-left: 20px;
 }
+
+#foodImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
