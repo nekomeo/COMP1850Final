@@ -71,7 +71,6 @@
                 
                 <!-- Modal -->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="addData()">Submit</button>
-<!--
                 <div id="myModal" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -88,7 +87,6 @@
                         </div>
                     </div>
                 </div>
--->
             </form>
         </div>
         
@@ -100,26 +98,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
         <script>
-//            // Get a reference to the database service
-//            var database = firebase.database();
-//            
-//            function writeUserData(userId, inputEmail, restaurant, inputComment) {
-//                firebase.database().ref('users/' + userId).set({
-//                    input_Email: inputEmail,
-//                    input_Restaurant: restaurant,
-//                    input_Comment : inputComment
-//                }, function(error) {
-//                    if (error) {
-//                        alert("Something went wrong, please try again later. Sorry for the inconvenience");
-//                    } else {
-//                        alert("Success!");
-//                    }
-//                });
-//            }
-            
             function addData(){
                 var db = firebase.firestore();
-                alert("adding data");
                 var input_Email = document.getElementById("inputEmail").value;
                 var input_Restaurant = document.getElementById("restaurant").value;
                 var input_Comment = document.getElementById("inputComment").value;
@@ -131,10 +111,8 @@
                 })
                     .then(function(docRef) {
                     console.log("Document written with ID: ", docRef.id);
-                    document.getElementById('inputEmail').value = '';
-                    document.getElementById('restaurant').value = '';
-                    document.getElementById('inputComment').value = '';
-                    alert("Added");
+                    
+                    document.forms[0].reset()
                     //update the products view
                 })
                     .catch(function(error) {

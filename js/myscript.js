@@ -25,4 +25,3 @@ function callFirebase() {
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);callFirebase
 }
-
