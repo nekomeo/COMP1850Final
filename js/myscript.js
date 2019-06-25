@@ -7,7 +7,7 @@ const images = {
     '/want3.html': '../images/w3.png',
 };
 
-if (Object.keys(images).indexOf(document.location.pathname) > 0) {
+if (Object.keys(images).indexOf(document.location.pathname) >= 0) {
     document.getElementById('restoImage').src =     images[document.location.pathname];
 }
 
