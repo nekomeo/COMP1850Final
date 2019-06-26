@@ -1,3 +1,9 @@
+// Navbar Hamburger toggle
+document.querySelector(".navbar-toggler").addEventListener("click", function(e){  
+      document.querySelector("#foodieNavbar").classList.toggle("show");
+  });
+
+
 const images = {
     '/been1.html': '../images/b1.png',
     '/been2.html': '../images/b2.png',
