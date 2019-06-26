@@ -47,7 +47,6 @@ function addData() {
     });
 }
 
-
-function openModal() {
-    
+function introModal() {
+    alert("Hello! Please choose from the Restaurants dropdown on the navigation bar!");
 }
