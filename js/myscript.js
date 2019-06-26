@@ -25,3 +25,29 @@ function callFirebase() {
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);callFirebase
 }
+
+function addData() {
+    var db = firebase.firestore();
+    var input_Email = document.getElementById("inputEmail").value;
+    var input_Restaurant = document.getElementById("restaurant").value;
+    var input_Comment = document.getElementById("inputComment").value;
+
+    db.collection("contactForm").add({
+        inputEmail: input_Email,
+        restaurantType: input_Restaurant,
+        inputComment: input_Comment
+    })
+        .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        document.forms[0].reset()
+        //update the products view
+    })
+        .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+}
+
+
+function openModal() {
+    
+}
